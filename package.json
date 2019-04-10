@@ -1,0 +1,49 @@
+{
+  "name": "brain-games-vselekula",
+  "version": "1.0.18",
+  "description": "1st project on Hexlet \"Brain Games\"",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vselekula/project-lvl1-s474.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-eslint": "^8.2.6",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "keywords": [
+    "brain",
+    "games",
+    "math"
+  ],
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js",
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-progression": "dist/bin/brain-progression.js"
+  },
+  "author": "Vjacheslav Petrov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vselekula/project-lvl1-s450/issues"
+  },
+  "homepage": "https://github.com/vselekula/project-lvl1-s450#readme",
+  "dependencies": {
+    "hexlet-pairs": "^1.0.8",
+    "readline-sync": "^1.4.9"
+  }
+}
