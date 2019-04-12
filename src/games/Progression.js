@@ -2,9 +2,9 @@ import { cons } from 'hexlet-pairs';
 import brainGames from '../index';
 import { randomNumber } from '../utils';
 
-const condition = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in the progression?';
 const progressionLength = 10;
-const generateData = (indexOfMissingElement, start, adder) => {
+const generateQuestion = (indexOfMissingElement, start, adder) => {
   const iter = (acc) => {
     const item = (acc === indexOfMissingElement) ? '..' : start + (acc * adder);
     if (acc === progressionLength - 1) {
@@ -20,10 +20,10 @@ const game = () => {
   const adder = randomNumber(0, 10);
   const indexOfMissingElement = randomNumber(0, progressionLength);
   const rightAnswer = start + (indexOfMissingElement * adder);
-  const items = generateData(indexOfMissingElement, start, adder);
-  return { rightAnswer, items };
+  const question = generateQuestion(indexOfMissingElement, start, adder);
+  return { rightAnswer, items: question };
 };
 
 export default () => {
-  brainGames(condition, game);
+  brainGames(gameDescription, game);
 };
