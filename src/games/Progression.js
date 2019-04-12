@@ -19,7 +19,7 @@ const game = () => {
   const start = randomNumber(0, 10);
   const adder = randomNumber(0, 10);
   const indexOfMissingElement = randomNumber(0, progressionLength);
-  const rightAnswer = start + (indexOfMissingElement * adder);
+  const rightAnswer = (start + (indexOfMissingElement * adder)).toString();
   const question = generateQuestion(indexOfMissingElement, start, adder);
   return { rightAnswer, items: question };
 };

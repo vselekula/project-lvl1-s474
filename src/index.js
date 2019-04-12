@@ -6,7 +6,7 @@ export const condition = str => console.log(str);
 export const askName = () => readlineSync.question('May I have your name? ');
 export const greet = (name, str = 'Hello') => console.log(`${str} ${name} !`);
 export const ask = question => readlineSync.question(`Question:  ${question} \nYour answer: `);
-export const isAnswerCorrect = (usersAnswer, rightAnswer) => usersAnswer == rightAnswer;
+export const isAnswerCorrect = (usersAnswer, rightAnswer) => usersAnswer === rightAnswer;
 export const answerIsCorrect = () => console.log('Correct!');
 export const win = (userName, str = 'Congratulations,') => console.log(`${str} ${userName}`);
 export const answerIsIncorrect = (userAnswer, rightAnswer, userName) => {
