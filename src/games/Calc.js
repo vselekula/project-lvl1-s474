@@ -3,7 +3,7 @@ import { cons, car, cdr } from 'hexlet-pairs';
 import { randomNumber } from '../utils';
 import brainGames from '..';
 
-const condition = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 const arrayOfOperators = ['+', '-', '*'];
 const arrayLen = arrayOfOperators.length;
 const generateData = () => {
@@ -28,11 +28,11 @@ const calculateExpression = (expression) => {
   }
 };
 const game = () => {
-  const items = generateData();
-  const rightAnswer = calculateExpression(items);
-  return { rightAnswer, items };
+  const question = generateData();
+  const rightAnswer = calculateExpression(question);
+  return { rightAnswer, question };
 };
 
 export default () => {
-  brainGames(condition, game);
+  brainGames(gameDescription, game);
 };

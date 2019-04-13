@@ -21,7 +21,7 @@ const game = () => {
   const indexOfMissingElement = randomNumber(0, progressionLength);
   const rightAnswer = (start + (indexOfMissingElement * adder)).toString();
   const question = generateQuestion(indexOfMissingElement, start, adder);
-  return { rightAnswer, items: question };
+  return { rightAnswer, question };
 };
 
 export default () => {

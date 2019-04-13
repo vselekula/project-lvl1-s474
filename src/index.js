@@ -1,19 +1,7 @@
 import { car, cdr, isPair } from 'hexlet-pairs';
 import readlineSync from 'readline-sync';
 
-export const header = () => console.log('Welcome to the Brain Games!');
-export const condition = str => console.log(str);
-export const askName = () => readlineSync.question('May I have your name? ');
-export const greet = (name, str = 'Hello') => console.log(`${str} ${name} !`);
-export const ask = question => readlineSync.question(`Question:  ${question} \nYour answer: `);
-export const isAnswerCorrect = (usersAnswer, rightAnswer) => usersAnswer === rightAnswer;
-export const answerIsCorrect = () => console.log('Correct!');
-export const win = (userName, str = 'Congratulations,') => console.log(`${str} ${userName}`);
-export const answerIsIncorrect = (userAnswer, rightAnswer, userName) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-  console.log(`Let's try again, ${userName}`);
-};
-
+const isAnswerCorrect = (usersAnswer, rightAnswer) => usersAnswer === rightAnswer;
 
 const numOfQuestion = 3;
 const toString = (pair) => {
@@ -25,22 +13,23 @@ const toString = (pair) => {
   return String(pair);
 };
 export default (cond, game) => {
-  header();
-  condition(cond);
-  const userName = askName();
-  greet(userName);
+  console.log('Welcome to the Brain Games!');
+  console.log(`${cond}`);
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello ${userName} !`);
   const iter = (acc) => {
     if (acc === 0) {
-      win(userName);
+      console.log(`Congratulations, ${userName}`);
       return;
     }
-    const { rightAnswer, items } = game();
-    const userAnswer = ask(toString(items));
+    const { rightAnswer, question } = game();
+    const userAnswer = readlineSync.question(`Question:  ${toString(question)} \nYour answer: `);
     if (isAnswerCorrect(userAnswer, rightAnswer)) {
-      answerIsCorrect();
+      console.log('Correct!');
       iter(acc - 1);
     } else {
-      answerIsIncorrect(userAnswer, rightAnswer, userName);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+      console.log(`Let's try again, ${userName}`);
     }
   };
   iter(numOfQuestion);

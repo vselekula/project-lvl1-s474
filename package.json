@@ -44,6 +44,7 @@
   "homepage": "https://github.com/vselekula/project-lvl1-s450#readme",
   "dependencies": {
     "hexlet-pairs": "^1.0.8",
+    "npm": "^6.9.0",
     "readline-sync": "^1.4.9"
   }
 }
