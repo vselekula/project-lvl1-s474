@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 import { cons, car, cdr } from 'hexlet-pairs';
-import { randomNumber } from '../utils';
-import brainGames from '..';
+import { generateRandomNumber, toString } from '../utils';
+import createGame from '..';
 
 const gameDescription = 'What is the result of the expression?';
 const arrayOfOperators = ['+', '-', '*'];
 const arrayLen = arrayOfOperators.length;
 const generateData = () => {
-  const a = randomNumber(0, 10);
-  const b = randomNumber(0, 10);
-  const operation = arrayOfOperators[randomNumber(0, arrayLen)];
+  const a = generateRandomNumber(0, 10);
+  const b = generateRandomNumber(0, 10);
+  const operation = arrayOfOperators[generateRandomNumber(0, arrayLen - 1)];
   return cons(a, cons(operation, b));
 };
 const calculateExpression = (expression) => {
@@ -27,12 +27,11 @@ const calculateExpression = (expression) => {
       throw new Error('Как так получилось — не понятно');
   }
 };
-const game = () => {
+const generateGameData = () => {
   const question = generateData();
   const rightAnswer = calculateExpression(question);
-  return { rightAnswer, question };
+  return { rightAnswer: toString(rightAnswer), question: toString(question) };
 };
-
 export default () => {
-  brainGames(gameDescription, game);
+  createGame(gameDescription, generateGameData);
 };

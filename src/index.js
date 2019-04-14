@@ -1,20 +1,13 @@
-import { car, cdr, isPair } from 'hexlet-pairs';
+// import { car, cdr, isPair } from 'hexlet-pairs';
 import readlineSync from 'readline-sync';
 
 const isAnswerCorrect = (usersAnswer, rightAnswer) => usersAnswer === rightAnswer;
 
 const numOfQuestion = 3;
-const toString = (pair) => {
-  if (isPair(pair)) {
-    const left = toString(car(pair));
-    const right = toString(cdr(pair));
-    return `${left} ${right}`;
-  }
-  return String(pair);
-};
-export default (cond, game) => {
+
+export default (gameDescription, gameData) => {
   console.log('Welcome to the Brain Games!');
-  console.log(`${cond}`);
+  console.log(`${gameDescription}`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello ${userName} !`);
   const iter = (acc) => {
@@ -22,8 +15,8 @@ export default (cond, game) => {
       console.log(`Congratulations, ${userName}`);
       return;
     }
-    const { rightAnswer, question } = game();
-    const userAnswer = readlineSync.question(`Question:  ${toString(question)} \nYour answer: `);
+    const { rightAnswer, question } = gameData();
+    const userAnswer = readlineSync.question(`Question:  ${question} \nYour answer: `);
     if (isAnswerCorrect(userAnswer, rightAnswer)) {
       console.log('Correct!');
       iter(acc - 1);

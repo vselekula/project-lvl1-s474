@@ -1,5 +1,5 @@
-import brainGames from '../index';
-import { randomNumber } from '../utils';
+import createGame from '../index';
+import { generateRandomNumber } from '../utils';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -15,12 +15,12 @@ const isPrime = (num) => {
 
 const gameDescription = 'Answer "yes" if number is prime otherwise answer "no".';
 
-const game = () => {
-  const question = randomNumber(1, 100);
+const generateGameData = () => {
+  const question = generateRandomNumber(1, 100);
   const rightAnswer = isPrime(question) ? 'yes' : 'no';
   return { rightAnswer, question };
 };
 
 export default () => {
-  brainGames(gameDescription, game);
+  createGame(gameDescription, generateGameData);
 };

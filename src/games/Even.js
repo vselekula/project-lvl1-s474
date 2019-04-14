@@ -1,16 +1,17 @@
 #!/usr/bin/env node
-import { isEven, randomNumber } from '../utils';
-import brainGames from '..';
+import { generateRandomNumber, toString } from '../utils';
+import createGame from '..';
 
+const isEven = num => num % 2 === 0;
 const gameDescription = 'Answer "yes" if number even otherwise answer "no".';
-const generateData = () => randomNumber(0, 10);
+const generateData = () => generateRandomNumber(0, 10);
 const checkIfEven = num => (isEven(num) ? 'yes' : 'no');
 
-const game = () => {
-  const question = generateData();
+const generateGameData = () => {
+  const question = toString(generateData());
   const rightAnswer = checkIfEven(question);
   return { rightAnswer, question };
 };
 export default () => {
-  brainGames(gameDescription, game);
+  createGame(gameDescription, generateGameData);
 };
