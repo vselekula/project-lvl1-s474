@@ -1,7 +1,4 @@
-// import { car, cdr, isPair } from 'hexlet-pairs';
 import readlineSync from 'readline-sync';
-
-const isAnswerCorrect = (usersAnswer, rightAnswer) => usersAnswer === rightAnswer;
 
 const numOfQuestion = 3;
 
@@ -16,8 +13,9 @@ export default (gameDescription, gameData) => {
       return;
     }
     const { rightAnswer, question } = gameData();
-    const userAnswer = readlineSync.question(`Question:  ${question} \nYour answer: `);
-    if (isAnswerCorrect(userAnswer, rightAnswer)) {
+    console.log(`Question:  ${question} `);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer === rightAnswer) {
       console.log('Correct!');
       iter(acc - 1);
     } else {

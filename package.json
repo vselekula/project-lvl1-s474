@@ -1,6 +1,6 @@
 {
   "name": "brain-games-vselekula",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "1st project on Hexlet \"Brain Games\"",
   "scripts": {
     "build": "cross-env NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -24,6 +24,10 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0"
   },
+  "dependencies": {
+    "hexlet-pairs": "^1.0.8",
+    "readline-sync": "^1.4.9"
+  },
   "keywords": [
     "brain",
     "games",
@@ -42,10 +46,5 @@
   "bugs": {
     "url": "https://github.com/vselekula/project-lvl1-s450/issues"
   },
-  "homepage": "https://github.com/vselekula/project-lvl1-s450#readme",
-  "dependencies": {
-    "hexlet-pairs": "^1.0.8",
-    "npm": "^6.9.0",
-    "readline-sync": "^1.4.9"
-  }
+  "homepage": "https://github.com/vselekula/project-lvl1-s450#readme"
 }

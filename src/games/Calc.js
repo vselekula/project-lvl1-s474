@@ -1,35 +1,28 @@
 #!/usr/bin/env node
-import { cons, car, cdr } from 'hexlet-pairs';
 import { generateRandomNumber, toString } from '../utils';
 import createGame from '..';
 
 const gameDescription = 'What is the result of the expression?';
-const arrayOfOperators = ['+', '-', '*'];
-const arrayLen = arrayOfOperators.length;
-const generateData = () => {
-  const a = generateRandomNumber(0, 10);
-  const b = generateRandomNumber(0, 10);
-  const operation = arrayOfOperators[generateRandomNumber(0, arrayLen - 1)];
-  return cons(a, cons(operation, b));
-};
-const calculateExpression = (expression) => {
-  const x = car(expression);
-  const operation = car(cdr(expression));
-  const y = cdr(cdr(expression));
+const operators = ['+', '-', '*'];
+
+const calculateExpression = (a, b, operation) => {
   switch (operation) {
     case '+':
-      return x + y;
+      return a + b;
     case '-':
-      return x - y;
+      return a - b;
     case '*':
-      return x * y;
+      return a * b;
     default:
       throw new Error('Как так получилось — не понятно');
   }
 };
 const generateGameData = () => {
-  const question = generateData();
-  const rightAnswer = calculateExpression(question);
+  const a = generateRandomNumber(0, 10);
+  const b = generateRandomNumber(0, 10);
+  const operation = operators[generateRandomNumber(0, operators.length - 1)];
+  const question = `${a} ${operation} ${b}`;
+  const rightAnswer = calculateExpression(a, b, operation);
   return { rightAnswer: toString(rightAnswer), question: toString(question) };
 };
 export default () => {
