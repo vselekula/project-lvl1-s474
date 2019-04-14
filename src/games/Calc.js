@@ -22,8 +22,8 @@ const generateGameData = () => {
   const b = generateRandomNumber(0, 10);
   const operation = operators[generateRandomNumber(0, operators.length - 1)];
   const question = `${a} ${operation} ${b}`;
-  const rightAnswer = calculateExpression(a, b, operation);
-  return { rightAnswer: toString(rightAnswer), question: toString(question) };
+  const rightAnswer = toString(calculateExpression(a, b, operation));
+  return { rightAnswer, question };
 };
 export default () => {
   createGame(gameDescription, generateGameData);

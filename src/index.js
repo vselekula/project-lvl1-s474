@@ -15,13 +15,13 @@ export default (gameDescription, gameData) => {
     const { rightAnswer, question } = gameData();
     console.log(`Question:  ${question} `);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === rightAnswer) {
-      console.log('Correct!');
-      iter(acc - 1);
-    } else {
+    if (userAnswer !== rightAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
       console.log(`Let's try again, ${userName}`);
+      return;
     }
+    console.log('Correct!');
+    iter(acc - 1);
   };
   iter(numOfQuestion);
 };
