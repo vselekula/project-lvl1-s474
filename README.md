@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/vselekula/project-lvl1-s450.svg?branch=master)](https://travis-ci.org/vselekula/project-lvl1-s450)
 Набор мини-игр, запускаемых из консоли.
 
-global installation:  
-npm i -g vselekula-brain-games 
+**global installation:**  
+`npm i -g vselekula-brain-games` 
 
 `$ brain-even`
 **Проверка на четность**
