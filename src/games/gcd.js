@@ -14,7 +14,7 @@ const generateGameData = () => {
   const a = generateRandomNumber(0, 100);
   const b = generateRandomNumber(0, 100);
   const question = `${a} ${b}`;
-  const rightAnswer = calculateDividor(a, b);
+  const rightAnswer = String(calculateDividor(a, b));
   return { rightAnswer, question };
 };
 
