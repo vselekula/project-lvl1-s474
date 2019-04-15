@@ -4,7 +4,7 @@
 Набор мини-игр, запускаемых из консоли.
 
 **global installation:**  
-`npm i -g vselekula-brain-games` 
+`npm i -g brain-games-vselekula` 
 ![alt-text](https://github.com/vselekula/project-lvl1-s474/blob/master/src/gifs/install.gif)
 
 `$ brain-even`
@@ -28,7 +28,7 @@
 ![alt-text](https://github.com/vselekula/project-lvl1-s474/blob/master/src/gifs/progression.gif)
 
 
-$ brain-prime
+`$ brain-prime`
 **Простое ли число?**
 Определить является ли число простым.
 ![alt-text](https://github.com/vselekula/project-lvl1-s474/blob/master/src/gifs/prime.gif)
