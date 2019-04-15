@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-console.log('Hi! Choose a game from the list and just enter the name of the game!');
+console.log('Hi! There\'s a list of available games. Type it in command line to test your brain');
 console.log('brain-calc');
 console.log('brain-even');
 console.log('brain-gcd');
