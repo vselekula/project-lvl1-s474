@@ -1,6 +1,6 @@
 {
   "name": "brain-games-vselekula",
-  "version": "1.0.27",
+  "version": "1.0.30",
   "description": "1st project on Hexlet \"Brain Games\"",
   "scripts": {
     "build": "cross-env NODE_ENV=production babel src --out-dir dist --source-maps inline",
